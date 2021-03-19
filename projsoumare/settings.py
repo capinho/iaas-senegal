@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wm(x!)rchium3k@o$22be08@m5gyouder08^ee_jd4&!sgrwjg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
@@ -142,12 +142,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = environ['MY_EMAIL']
-EMAIL_HOST_PASSWORD = environ['MY_EMAIL_PASSWORD']
+EMAIL_HOST_USER = 'pidiawara56@gmail.com' 
+EMAIL_HOST_PASSWORD = 'Alerteaufeu13'
 
 TEMPLATED_EMAIL_FROM_EMAIL = 'TEST'
 
 
 TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django'
 
-#django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
